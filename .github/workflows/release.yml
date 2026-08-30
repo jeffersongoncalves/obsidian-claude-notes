@@ -19,11 +19,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: "npm"
 
-      - run: bun install
+      - run: npm ci
 
-      - run: bun run build
+      - run: npm run build
 
       - uses: actions/attest-build-provenance@e8998f949152b193b063cb0ec769d69d929409be # v2.4.0
         with:

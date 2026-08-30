@@ -56,7 +56,7 @@ Obsidian's plugin review surfaces what a plugin can technically do, for transpar
 
 ## Install (manual, until this is on the community plugin list)
 
-1. `bun install && bun run build` (or `npm install && npm run build`).
+1. `npm install && npm run build`.
 2. Copy `manifest.json`, `main.js`, `styles.css` into `<vault>/.obsidian/plugins/claude-notes/`.
 3. Enable "Claude Notes" in Obsidian's Community Plugins settings.
 
@@ -65,9 +65,10 @@ Or grab the built `main.js`/`manifest.json`/`styles.css` straight from a [releas
 ## Development
 
 ```bash
-bun install
-bun run dev     # esbuild watch — rebuilds main.js on change
-bun run build   # type-check (tsc) + production build
+npm install
+npm run dev     # esbuild watch — rebuilds main.js on change
+npm run build   # type-check (tsc) + production build
+npm run lint    # eslint-plugin-obsidianmd, same checks as the plugin review
 ```
 
 ## License
