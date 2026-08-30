@@ -13,9 +13,9 @@
 	"author": "Jefferson Goncalves",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^22.15.17",
-		"esbuild": "0.25.5",
+		"@types/node": "^26.4.0",
+		"esbuild": "0.28.2",
 		"obsidian": "latest",
-		"typescript": "^5.8.3"
+		"typescript": "^7.0.2"
 	}
 }
