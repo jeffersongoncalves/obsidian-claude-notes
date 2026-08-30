@@ -1,4 +1,15 @@
+<div class="filament-hidden">
+
+![Claude Notes](https://raw.githubusercontent.com/jeffersongoncalves/obsidian-claude-notes/main/art/jeffersongoncalves-obsidian-claude-notes.png)
+
+</div>
+
 # Claude Notes (Obsidian plugin)
+
+<p align="center">
+  <a href="https://github.com/jeffersongoncalves/obsidian-claude-notes/releases/latest"><img src="https://img.shields.io/github/v/release/jeffersongoncalves/obsidian-claude-notes" alt="Latest Release" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/jeffersongoncalves/obsidian-claude-notes" alt="License" /></a>
+</p>
 
 Obsidian plugin for notes written by the Claude Code [`obsidian-notes-cli`](https://github.com/jeffersongoncalves/obsidian-notes-cli): a sidebar of those notes, a command to generate one from inside Obsidian, and live refresh when the CLI writes a new one.
 
