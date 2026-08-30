@@ -22,7 +22,7 @@ export class ClaudeNotesView extends ItemView {
 	}
 
 	getDisplayText(): string {
-		return 'Claude Notes';
+		return 'Claude notes';
 	}
 
 	getIcon(): string {
@@ -36,12 +36,12 @@ export class ClaudeNotesView extends ItemView {
 	async refresh(): Promise<void> {
 		const container = this.containerEl.children[1] as HTMLElement;
 		container.empty();
-		container.createEl('h4', { text: 'Claude Notes' });
+		container.createEl('h4', { text: 'Claude notes' });
 
 		const entries = this.collectNotes();
 
 		if (entries.length === 0) {
-			container.createEl('p', { text: 'No Claude Code notes yet.', cls: 'claude-notes-empty' });
+			container.createEl('p', { text: 'No Claude code notes yet.', cls: 'claude-notes-empty' });
 
 			return;
 		}
@@ -55,13 +55,13 @@ export class ClaudeNotesView extends ItemView {
 		}
 
 		for (const [project, notes] of byProject) {
-			container.createEl('div', { text: project, cls: 'claude-notes-project' });
+			container.createDiv({ text: project, cls: 'claude-notes-project' });
 			const ul = container.createEl('ul', { cls: 'claude-notes-list' });
 
 			for (const note of notes) {
 				const li = ul.createEl('li', { text: note.title, cls: 'claude-notes-item' });
 				this.registerDomEvent(li, 'click', () => {
-					this.app.workspace.getLeaf(false).openFile(note.file);
+					void this.app.workspace.getLeaf(false).openFile(note.file);
 				});
 			}
 		}
@@ -83,8 +83,8 @@ export class ClaudeNotesView extends ItemView {
 
 			entries.push({
 				file,
-				title: frontmatter.title ?? file.basename,
-				project: frontmatter.project ?? '-',
+				title: (frontmatter.title as string | undefined) ?? file.basename,
+				project: (frontmatter.project as string | undefined) ?? '-',
 			});
 		}
 

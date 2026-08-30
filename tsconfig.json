@@ -10,6 +10,8 @@
 		"types": ["node"],
 		"importHelpers": true,
 		"isolatedModules": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,

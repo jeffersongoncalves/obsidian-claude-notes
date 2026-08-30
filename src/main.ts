@@ -22,7 +22,7 @@ export default class ClaudeNotesPlugin extends Plugin {
 
 		this.registerView(VIEW_TYPE_CLAUDE_NOTES, (leaf) => new ClaudeNotesView(leaf, this));
 
-		this.addRibbonIcon('file-text', 'Claude Notes', () => this.activateView());
+		this.addRibbonIcon('file-text', 'Claude notes', () => this.activateView());
 
 		this.addCommand({
 			id: 'generate-note-here',
@@ -42,7 +42,7 @@ export default class ClaudeNotesPlugin extends Plugin {
 	}
 
 	async loadSettings(): Promise<void> {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+		this.settings = Object.assign({}, DEFAULT_SETTINGS, (await this.loadData()) as Partial<ClaudeNotesSettings>);
 	}
 
 	async saveSettings(): Promise<void> {
@@ -64,13 +64,13 @@ export default class ClaudeNotesPlugin extends Plugin {
 			await leaf.setViewState({ type: VIEW_TYPE_CLAUDE_NOTES, active: true });
 		}
 
-		workspace.revealLeaf(leaf);
+		await workspace.revealLeaf(leaf);
 	}
 
 	refreshView(): void {
 		for (const leaf of this.app.workspace.getLeavesOfType(VIEW_TYPE_CLAUDE_NOTES)) {
 			if (leaf.view instanceof ClaudeNotesView) {
-				leaf.view.refresh();
+				void leaf.view.refresh();
 			}
 		}
 	}
@@ -82,7 +82,7 @@ export default class ClaudeNotesPlugin extends Plugin {
 	 */
 	generateNote(): void {
 		if (!this.settings.cliPath) {
-			new Notice('Claude Notes: set the CLI binary path in settings first.');
+			new Notice('Claude notes: set the CLI binary path in settings first.');
 
 			return;
 		}
@@ -90,7 +90,7 @@ export default class ClaudeNotesPlugin extends Plugin {
 		const adapter = this.app.vault.adapter;
 
 		if (!(adapter instanceof FileSystemAdapter)) {
-			new Notice('Claude Notes: the CLI command only works on desktop.');
+			new Notice('Claude notes: the CLI command only works on desktop.');
 
 			return;
 		}
@@ -109,9 +109,9 @@ export default class ClaudeNotesPlugin extends Plugin {
 		child.stdin.write(body);
 		child.stdin.end();
 
-		child.on('error', (err) => new Notice(`Claude Notes: failed to run CLI — ${err.message}`));
+		child.on('error', (err) => new Notice(`Claude notes: failed to run CLI — ${err.message}`));
 		child.on('exit', (code) => {
-			new Notice(code === 0 ? 'Claude Notes: note created.' : `Claude Notes: CLI exited with code ${code}.`);
+			new Notice(code === 0 ? 'Claude notes: note created.' : `Claude notes: CLI exited with code ${code}.`);
 		});
 	}
 }

@@ -27,7 +27,7 @@ export async function readVaultConfig(app: App): Promise<VaultNotesConfig> {
 
 		const raw = await app.vault.adapter.read(CONFIG_PATH);
 
-		return { ...DEFAULT_VAULT_CONFIG, ...JSON.parse(raw) };
+		return { ...DEFAULT_VAULT_CONFIG, ...(JSON.parse(raw) as Partial<VaultNotesConfig>) };
 	} catch {
 		return DEFAULT_VAULT_CONFIG;
 	}
