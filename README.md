@@ -21,7 +21,7 @@ Part of a 3-repo integration:
 
 ## Requirements
 
-- Obsidian >= 1.5.0
+- Obsidian >= 1.13.0
 - Desktop only (see below)
 
 ## Features
@@ -54,7 +54,11 @@ Obsidian's plugin review surfaces what a plugin can technically do, for transpar
 - **Vault read/write/enumeration** — the sidebar reads every Markdown file's cached frontmatter (`getMarkdownFiles`) to find `source: claude-code` notes, and the settings tab reads/writes `.claude-notes.json` directly via the vault adapter (needed because Obsidian doesn't index dotfiles through the normal Vault API).
 - **Shell execution** (`child_process.spawn`) — only from the explicit "Generate note here" command, only to run the CLI binary path you configured in settings. Never triggered automatically.
 
-## Install (manual, until this is on the community plugin list)
+## Install
+
+From Obsidian: **Settings → Community plugins → Browse**, search for "Claude Notes", install and enable. Or view it directly on the [community plugin list](https://community.obsidian.md/plugins/claude-notes).
+
+### Manual install
 
 1. `npm install && npm run build`.
 2. Copy `manifest.json`, `main.js`, `styles.css` into `<vault>/.obsidian/plugins/claude-notes/`.
