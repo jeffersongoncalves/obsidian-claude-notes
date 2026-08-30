@@ -1,7 +1,7 @@
 {
 	"id": "claude-notes",
 	"name": "Claude Notes",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"minAppVersion": "1.13.0",
 	"description": "Sidebar, generate-note command, and live refresh for Markdown notes written by Claude Code.",
 	"author": "Jefferson Goncalves",
