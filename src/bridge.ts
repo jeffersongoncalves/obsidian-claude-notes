@@ -30,7 +30,7 @@ export class BridgeServer {
 			req.on('end', () => {
 				res.writeHead(200);
 				res.end('ok');
-				setTimeout(() => this.plugin.refreshView(), 150);
+				window.setTimeout(() => this.plugin.refreshView(), 150);
 			});
 		});
 

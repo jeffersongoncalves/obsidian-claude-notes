@@ -3,7 +3,7 @@
 	"name": "Claude Notes",
 	"version": "1.0.0",
 	"minAppVersion": "1.5.0",
-	"description": "Sidebar, generate-note command, and live refresh for Markdown notes written into this vault by the Claude Code obsidian-notes CLI.",
+	"description": "Sidebar, generate-note command, and live refresh for Markdown notes written by Claude Code.",
 	"author": "Jefferson Goncalves",
 	"authorUrl": "https://github.com/jeffersongoncalves",
 	"isDesktopOnly": true
