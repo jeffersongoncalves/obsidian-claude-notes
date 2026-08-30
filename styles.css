@@ -1,0 +1,25 @@
+.claude-notes-project {
+	font-weight: 600;
+	margin-top: 1em;
+	color: var(--text-muted);
+}
+
+.claude-notes-list {
+	list-style: none;
+	margin: 0.25em 0;
+	padding: 0;
+}
+
+.claude-notes-item {
+	padding: 0.2em 0.4em;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.claude-notes-item:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.claude-notes-empty {
+	color: var(--text-muted);
+}
