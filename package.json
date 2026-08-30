@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-claude-notes",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Obsidian plugin: sidebar, generate-note command, and live refresh for notes written by the Claude Code obsidian-notes CLI.",
 	"main": "main.js",
 	"type": "module",
